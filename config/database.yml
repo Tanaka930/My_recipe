@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: My_recipe_production
-  username: My_recipe
-  password: <%= ENV['MY_RECIPE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
