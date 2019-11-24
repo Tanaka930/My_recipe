@@ -41,11 +41,11 @@ body :-ms-input-placeholder {
   background: linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
   background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   position: absolute;
-  top: 10%;
+
   left: 0;
-  bottom: 10%;
+
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow: hidden;
 }
 .wrapper.form-success .container h1 {
@@ -69,7 +69,7 @@ form {
   position: relative;
   z-index: 2;
 }
-form input {
+.input {
   appearance: none;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -86,16 +86,16 @@ form input {
           transition-duration: 0.25s;
   font-weight: 300;
 }
-form input:hover {
+.input:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-form input:focus {
+.input:focus {
   background-color: white;
   width: 300px;
   color: #53e3a6;
 }
-form button {
-          appearance: none;
+.button {
+  appearance: none;
   outline: 0;
   background-color: white;
   border: 0;
@@ -108,7 +108,7 @@ form button {
   transition-duration: 0.25s;
 
 }
-form button:hover {
+.button:hover {
   background-color: #f5f7f9;
 }
 .bg-bubbles {
