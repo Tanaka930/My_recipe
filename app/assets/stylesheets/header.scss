@@ -4,3 +4,19 @@
   background-color: black;
   top: 0px;
 }
+
+.header__main-left{
+  width: 720px;
+  height: 100px;
+  color: blue;
+  left: 0px;
+  position: absolute;
+}
+
+.header__main-right{
+  width: 720px;
+  height: 100px;
+  color: red;
+  right: 0px;
+  position: absolute;
+}
