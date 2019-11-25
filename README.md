@@ -1,24 +1,63 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+料理レシピ投稿サービス
 
-Things you may want to cover:
+# アプリケーションの機能一覧
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+# アプリケーション内で使用している技術一覧
 
-* Database creation
+|種別|名称|
+|----|---|
+|開発言語|Ruby(ver 2.5.1)|
+|フレームワーク|Ruby on Rails(ver 5.2.3)|
+|マークアップ|HTML(Haml),CSS(Sass)|
+|フロントエンド|JavaScript(jQuery)|
+|DB|MySQL|
+|本番環境|Heroku|
+|画像アップロード|carrierwave, AWS S3|
+|自動デプロイ|Heroku|
+|ユーザー管理|devise|
 
-* Database initialization
 
-* How to run the test suite
+## recipesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|image|string|null: false|
+|text|text|null: false|
+|material|string||
+|seasoning|string||
+|my_text|text|null: false|
+|time|string||
+|category|string||
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string||default: |null: false|
+|encrypted_password|string||default: |null: false|
+|reset_password_token|string|
+|reset_password_sent_at|datetime||
+|remember_created_at|datetime|
+|name|string|null: false|
+|icon|string||
+|prof|text||
+|birthday|date||
+|gender|string|||
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
 
-* ...
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|

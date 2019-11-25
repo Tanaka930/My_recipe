@@ -1,29 +1,20 @@
--# .header__main
--#   .header__main-title
--#     =link_to 'title', '/recipes'
--#   .header__main-mypage
--#     =link_to 'mypage', ''
--#   .header__main-user
--#     =link_to 'ユーザー', ''
--#   .header__main-post
--#     =link_to 'レシピ', ''
 %header
   / Fixed navbar
   %nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-    %a.navbar-brand{:href => "#"} Fixed navbar
-    %button.navbar-toggler{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
+    %a.navbar-brand{:href => "/recipes"} Myrecipe
+    %button.navbar-toggler{"aria-controls": "navbarCollapse", "aria-expanded": "false", "aria-label": "Toggle navigation", "data-target": "#navbarCollapse", "data-toggle": "collapse", type: "button"}
       %span.navbar-toggler-icon
     #navbarCollapse.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto
         %li.nav-item.active
-          %a.nav-link{:href => "#"}
+          %a.nav-link{:href => "/signup"}
             Home
             %span.sr-only (current)
         %li.nav-item
-          %a.nav-link{:href => "#"} Link
+          %a.nav-link{:href => "/recipes/new"} recipe
         %li.nav-item
-          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} users
       %form.form-inline.mt-2.mt-md-0
-        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "text"}/
+        %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "text"}
         %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
 
