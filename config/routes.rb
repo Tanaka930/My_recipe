@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     get "signup", :to => "users/registrations#new"
     get "login", :to => "users/sessions#new"
     get "logout", :to => "users/sessions#destroy"
-    get "all",  :to => "users/registrations#all"
   end
   root 'recipes#index'
   resources :recipes

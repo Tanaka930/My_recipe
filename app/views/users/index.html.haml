@@ -11,9 +11,10 @@
           %button.btn.btn-success{name: "button", type: "submit"}  
             %i.fa.fa-search
             検索
-    .users-all-items
-      .user-left
-        =link_to "name","",class:"users-items-box"
-        = image_tag '', alt: '', height: '', width: '', class: 'user-left-img'
-      .user-right
-        name
+    -@users.each do |user|
+      .users-all-items
+        .user-left
+          =link_to "name","",class:"users-items-box"
+          = image_tag '', alt: '', height: '', width: '', class: 'user-left-img'
+        .user-right
+          = user.name

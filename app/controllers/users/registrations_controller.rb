@@ -15,7 +15,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
     "/user/#{current_user.id}"
   end
 
-  def all
-  end
 
 end
