@@ -49,10 +49,7 @@ p {
   display: inline;
   font-size: 12px;
   padding: 0px 10px;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+
 }
 
 .show-link-btn-recipe{
@@ -68,4 +65,39 @@ p {
   cursor: pointer;
   border: 2px solid grey;
   border-radius: 10px;
+}
+
+.recipe-button{
+  margin-left: 120px;
+}
+
+.user-tabs {
+  margin-top: 0px;
+  background-color: #DCDCDC;
+  overflow: hidden;
+  height: 41px;
+}
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.user-tabs li.active {
+  font-weight: bold;
+  border-left: 2px solid #A9A9A9;
+  border-right: 2px solid #A9A9A9;
+  border-top: 2px solid #A9A9A9;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+}
+.user-tabs li {
+  width: 50%;
+  height: 41px;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.user-tabs li.unactive {
+  border-bottom: 2px solid #A9A9A9;
 }
