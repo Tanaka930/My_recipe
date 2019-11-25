@@ -15,8 +15,10 @@
     .form-body {
       padding: 30px;
       .title {
+        background: #50a3a2;
+        background: linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+        background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
         text-align: center;
-        background-color: #28a745;
         font-weight: bold;
         opacity: 0.8;
         color: white;
@@ -85,7 +87,9 @@
         }
       }
       .submit {
-        background-color: black;
+        background: #50a3a2;
+        background: linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+        background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
         color: white;
         cursor: pointer;
         font-weight: 300;
