@@ -2,9 +2,13 @@
 
 .recipe__container
   %main.container{:role => "main"}
-    .card{:style => "width: 9rem;"}
-    %img.card-img-top{:alt => "...", :src => "..."}/
-    .card-body
-      %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+    - @recipe.each do |recipe|
+      .card.bg-dark.text-white
+        = image_tag "#{recipe.image}"
+        .card-img-overlay
+          %h5.card-title Card title
+          %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+          %p.card-text Last updated 3 mins ago
+
 
 = render 'shared/footer'
