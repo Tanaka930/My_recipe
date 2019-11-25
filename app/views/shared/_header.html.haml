@@ -8,12 +8,12 @@
       %ul.navbar-nav.mr-auto
         %li.nav-item.active
           %a.nav-link{:href => "/signup"}
-            Home
+            Mypage
             %span.sr-only (current)
         %li.nav-item
           %a.nav-link{:href => "/recipes/new"} recipe
         %li.nav-item
-          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} users
+          %a.nav-link.disabled{"aria-disabled" => "true", :href => "/user/index", :tabindex => "-1"} users
       %form.form-inline.mt-2.mt-md-0
         %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "text"}
         %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
