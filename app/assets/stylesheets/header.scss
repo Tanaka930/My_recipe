@@ -5,18 +5,53 @@
   top: 0px;
 }
 
-.header__main-left{
-  width: 670px;
+.header__main-title-box{
+  width: 200px;
   height: 100px;
-  color: blue;
-  left: 0px;
   position: absolute;
 }
 
-.header__main-right{
-  width: 670px;
+.header__main-title{
+  font-size:50px;
   height: 100px;
-  color: red;
+  left: 30px;
+  position: absolute;
+  padding-top: 5px;
+}
+
+.header__main-mypage-box{
+  width: 200px;
+  height: 100px;
   right: 0px;
   position: absolute;
+}
+.header__main-mypage{
+  font-size: 35px;
+  right: 30px;
+  position: absolute;
+  margin-top: 13px;
+}
+.header__main-user-box{
+  width: 200px;
+  height: 100px;
+  right: 200px;
+  position: absolute;
+}
+.header__main-user{
+  font-size: 30px;
+  right: 180px;
+  margin-top: 20px;
+  float: right;
+}
+.header__main-post-box{
+  width: 200px;
+  height: 100px;
+  right: 400px;
+  position: absolute;
+}
+.header__main-post{
+  font-size: 30px;
+  right: 330px;
+  margin-top: 20px;
+  float: right;
 }
