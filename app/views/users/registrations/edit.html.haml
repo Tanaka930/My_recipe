@@ -3,7 +3,7 @@
 .wrapper
   .container
     %h2
-      プロフィール変更
+      メール・パスワード
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
