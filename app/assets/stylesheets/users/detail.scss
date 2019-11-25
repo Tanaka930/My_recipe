@@ -1,0 +1,71 @@
+.main__user-content{
+  position: absolute;
+  top: 56px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-color: #F5F5F5;
+}
+
+.user-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
+.user {
+  padding-bottom: 10px;
+  background-color: white;
+}
+
+.user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 60%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: auto;
+  object-fit: cover;
+}
+
+h10 {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.show-link-btn{
+  width: 570px;
+  height: 40px;
+}
+
+p {
+  display: inline;
+  font-size: 12px;
+  padding: 0px 10px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.show-link-btn-recipe{
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 100px;
+  height: 35px;
+  padding: 2px 14px;
+  color: grey;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
