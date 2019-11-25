@@ -1,0 +1,97 @@
+= render 'shared/header'
+
+.container
+  %form{"accept-charset" => "UTF-8", :action => "/posts/create", :enctype => "multipart/form-data", :method => "post"}
+    %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+    %input{:name => "authenticity_token", :type => "hidden", :value => "OfvB2njnOSsrwjqXEQalWvPmbavaEAEMDCPdWj07vjUI+8TfmIGPjZ7zUf2yRj32AN0afn8ToMPdGYpu9dqqYQ=="}/
+    .form
+      .form-body
+        .title
+          %p レシピ作成
+        %p
+          料理名 
+          %span#must-icon 必須
+        %input{:name => "title", :placeholder => "柔らかハンバーグ..など（16字以内）", :value => ""}/
+        %p
+          画像 
+          %span#must-icon 必須
+        %input{:name => "image", :type => "file"}/
+        %p
+          メモ 
+          %span#must-icon 必須
+        %input{:name => "memo", :placeholder => "コメントを書く", :value => ""}/
+        %br/
+        %br/
+        %hr.hr-text{"data-content" => "AND"}/
+        %br/
+        .toggle-square
+          %p
+            材料・調味料：
+            %span#ingredient-link.btn.btn-toggle
+              %i.fas.fa-angle-down.fa-large
+          %section#ingredient-sec
+            %p
+              %select{:name => "person"}
+                %option{:value => "0"} 未選択
+                %option{:value => "1"} 1人前
+                %option{:value => "2"} 2人前
+                %option{:value => "3"} 3人前
+                %option{:value => "4"} 4人前
+                %option{:value => "5"} 5人前
+                %option{:value => "6"} 6人前
+                %option{:value => "7"} 7人前
+                %option{:value => "8"} 8人前
+            %input{:name => "ingredient", :placeholder => "材料：合挽き肉150g, 玉ねぎ1/2..など", :value => ""}/
+            %input{:name => "seasoning", :placeholder => "調味料：牛乳30ml, 醤油大さじ1..など", :value => ""}/
+        .toggle-square
+          %p
+            作り方：
+            %span#content-link.btn.btn-toggle
+              %i.fas.fa-angle-down.fa-large
+          %section#content-sec
+            %textarea{:name => "content", :placeholder => "手順1"}
+            %textarea{:name => "content2", :placeholder => "手順2"}
+            %textarea{:name => "content3", :placeholder => "手順3"}
+            %textarea{:name => "content4", :placeholder => "手順4"}
+        .toggle-square
+          %p
+            自分用メモ：
+            %span#memo-link.btn.btn-toggle
+              %i.fas.fa-angle-down.fa-large
+          %section#memo-sec
+            %textarea{:name => "mymemo", :placeholder => "他ユーザーには表示されません"}
+        %p
+          料理時間：
+          %select{:name => "time", :value => ""}
+            %option 5分以内
+            %option 10分
+            %option 15分
+            %option 20分
+            %option 25分
+            %option 30分
+            %option 35分
+            %option 40分
+            %option 45分
+            %option 50分
+            %option 55分
+            %option 1時間以上
+          %span#must-icon 必須
+        %br/
+        %p
+          カテゴリ：
+          %select{:name => "category_id", :value => ""}
+            %option{:value => "1"} お肉料理
+            %option{:value => "2"} 野菜料理
+            %option{:value => "3"} 魚介料理
+            %option{:value => "4"} パスタ
+            %option{:value => "5"} ご飯
+            %option{:value => "6"} 麺類
+            %option{:value => "8"} スープ
+            %option{:value => "9"} お弁当
+            %option{:value => "7"} スイーツ
+            %option{:value => "10"} その他
+          %span#must-icon 必須
+        %input.submit{:type => "submit", :value => "投稿"}/
+        #overlay
+
+= render 'shared/footer'
