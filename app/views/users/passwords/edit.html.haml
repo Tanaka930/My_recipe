@@ -13,11 +13,11 @@
           %em
             (#{@minimum_password_length} characters minimum)
           %br/
-        = f.password_field :password, autofocus: true, autocomplete: "new-password"
+        = f.password_field :password, autofocus: true, autocomplete: "new-password", class: "input"
       .field
         = f.label :password_confirmation, "Confirm new password"
         %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
       .actions
-        = f.submit "Change my password"
+        = f.submit "Change my password",class: "button"
     = render "users/shared/links"
