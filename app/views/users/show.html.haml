@@ -5,9 +5,9 @@
         .users-new-title
           %p プロフィール編集
         %form#edit_user_183.edit_user{"accept-charset": "UTF-8", action: "/users/183", enctype: "multipart/form-data", method: "post"}
-          %input{name: "utf8", type: "hidden", value: "✓"}/
-          %input{name: "_method", type: "hidden", value: "patch"}/
-          %input{name: "authenticity_token", type: "hidden", value: "e7jH119v0juYz4ykHMMfhj6uAM4dhFORmHa1D6DEqP8jZe3nBeY+e+U97m4jJ8WLI1BbiObc8NQSJk7IeqYzFA=="}/
+          %input{name: "utf8", type: "hidden", value: "✓"}
+          %input{name: "_method", type: "hidden", value: "patch"}
+          %input{name: "authenticity_token", type: "hidden", value: "e7jH119v0juYz4ykHMMfhj6uAM4dhFORmHa1D6DEqP8jZe3nBeY+e+U97m4jJ8WLI1BbiObc8NQSJk7IeqYzFA=="}
           %p ユーザー名
           %input{name: "name"}
           %p 画像
@@ -18,7 +18,7 @@
           %input{name: "profile"}
           .birthday-input
             %p 生年月日
-            %select#user_birthday_1i{name: "user[birthday(1i)]"}
+            %select#user_birthday_1i{name: "user[birthday(1i)]", class: "harf"}
               %option{value: "---"} ---
               %option{value: "1950"} 1950
               %option{value: "1951"} 1951
