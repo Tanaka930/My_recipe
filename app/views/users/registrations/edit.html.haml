@@ -1,7 +1,9 @@
+= stylesheet_link_tag    'users/new', media: 'all', 'data-turbolinks-track': 'reload'
+
 .wrapper
   .container
     %h2
-      プロフィール変更
+      メール・パスワード
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
@@ -27,14 +29,3 @@
         = f.submit "変更する", class: "button"
     = link_to "back", :back
     
-%ul.bg-bubbles
-  %li
-  %li
-  %li
-  %li
-  %li
-  %li
-  %li
-  %li
-  %li
-  %li
