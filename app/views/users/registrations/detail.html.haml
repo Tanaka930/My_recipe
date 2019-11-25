@@ -1,3 +1,22 @@
 = render 'shared/header'
 
+.main__user-content
+  .user-container
+    .user
+      .user-img
+      %h10.user-name
+        name
+      .show-link-btn
+        %p.recipe-button
+          =link_to 'レシピ作成',' /recipes/new',class: 'show-link-btn-recipe'
+        %p
+          =link_to 'プロフィール変更','/users/edit',class: 'show-link-btn-recipe'
+        %p
+          =link_to 'ログアウト','/logout',class: 'show-link-btn-recipe'
+    %ul.user-tabs
+      %li.active
+        =link_to 'Myレシピ',''
+      %li.unactive
+        =link_to 'お気に入り',''
+
 = render 'shared/footer'

@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
   root 'recipes#index'
   resources :recipes
-  
+  resources :users
 end
