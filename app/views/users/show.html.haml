@@ -143,13 +143,5 @@
             %label{for: "man"} 男性
             %input#woman{name: "sex", type: "radio", value: "2"}
             %label{for: "woman"} 女性
-          .status-input
-            %br/
-            %p
-              公開・非公開モード
-              %a{href: "/status"} もっと詳しく..
-            %input#1{name: "status", type: "radio", value: "1"}
-            %label{for: "1"} 公開
-            %input#2{name: "status", type: "radio", value: "2"}
-            %label{for: "2"} 非公開
-          %input{type: "submit", value: "保存"}
+          .conform
+            %input{type: "submit", value: "保存"}
