@@ -4,7 +4,7 @@
   .main__users-all-container
     %h1.users-heading
     .posts-index-top
-      %form{"action"=>"all", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
+      %form{"action"=>"users", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
         %input{"name" => "utf8", "type" => "hidden", "value" => "✓"}
         %p.users-search
           %input{"type" => "text", "name" =>"search", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
