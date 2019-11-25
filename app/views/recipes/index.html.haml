@@ -2,13 +2,29 @@
 
 .recipe__container
   %main.container{:role => "main"}
-    - @recipe.each do |recipe|
-      .card.bg-dark.text-white
-        = image_tag "#{recipe.image}"
-        .card-img-overlay
-          %h5.card-title Card title
-          %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-          %p.card-text Last updated 3 mins ago
+    %h1.users-heading
+    .posts-index-top
+      %form{"action"=>"all", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
+        %input{"name" => "utf8", "type" => "hidden", "value" => "✓"}
+        %p.users-search
+          %input{"type" => "text", "name" =>"search", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
+          %button.btn.btn-success{name: "button", type: "submit"}  
+            %i.fa.fa-search
+            検索
+    - @recipe.zip(@users).each do |recipe, user|
+      .card.mb-3
+        .row.no-gutters
+          .col-md-4
+            = image_tag "#{recipe.image}"
+          .col-md-8
+            .card-body
+              %h5.card-title
+                = recipe.name
+              %p.card-text
+                = user.name
+              %p.card-text
+                = recipe.text
+
 
 
 = render 'shared/footer'
