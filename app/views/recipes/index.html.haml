@@ -4,6 +4,7 @@
   %main.container{role: "main"}
     - @recipes.each do |recipe|
       .card{style: "width: 100%;"}
+      =link_to "recipes/#{recipe.id}" do
         %img.card-img-top{alt: "...", src: "#{recipe.image}"}
         .card-body
           %h5.card-title 
