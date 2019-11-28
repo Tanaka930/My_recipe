@@ -18,5 +18,11 @@
         =link_to 'Myレシピ',''
       %li.unactive
         =link_to 'お気に入り',''
-
+    .posts-index-photo
+    -@recipe.each do |recipe|
+      .post-photo
+        =link_to "/recipes/#{recipe.id}" do
+          = image_tag "#{recipe.image}" 
+        .post-title-inimage
+          =recipe.name
 = render 'shared/footer'

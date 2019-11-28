@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   
   def detail
+    @recipe = Recipe.all
     @user = User.find_by(id: params[:id])
   end
   
