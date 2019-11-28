@@ -104,11 +104,11 @@ form {
   cursor: pointer;
   font-size: 18px;
   transition-duration: 0.25s;
-
 }
 .button:hover {
   background-color: #f5f7f9;
 }
+
 .bg-bubbles {
   position: absolute;
   top: 0;
@@ -204,3 +204,9 @@ form {
   }
 }
 
+.image_recipe {
+  width: 40%;
+  height: 30%;
+  position: absolute;
+  top: 0;
+}
