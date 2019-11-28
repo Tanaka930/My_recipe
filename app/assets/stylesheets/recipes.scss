@@ -1,23 +1,8 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.main__users-all{
-  position: absolute;
-  top: 64px;
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-}
 
-.main__users-all-container{
-  max-width: 600px;
-  margin: 60px auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  clear: both;
-}
-
-.users-heading {
+.recipes-heading {
   font-weight: 300;
   font-size: 48px;
   color: #bcc8d4;
@@ -30,7 +15,7 @@
   box-shadow: 0 2px 6px #c1ced7;
 }
 
-.form_user {
+.form_recipe {
   padding: 0px;
   display: block;
   margin-top: 0em;
@@ -79,7 +64,7 @@ input {
   border-image: initial;
 }
 
-.users-search {
+.recipes-search {
   padding-left: 10px;
   padding-top: 10px;
   display: block;
@@ -88,6 +73,7 @@ input {
 input[type="text"] {
   font-size: 16px;
 }
+
 .search-form {
   width: 85%;
   height: 30px;

@@ -1,29 +1,37 @@
 = render 'shared/header'
 
 .recipe__container
-  %main.container{:role => "main"}
-    %h1.users-heading
+  %main.container{role: "main"}
+    %h1.recipes-heading
     .posts-index-top
-      %form{"action"=>"recipes", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
-        %input{"name" => "utf8", "type" => "hidden", "value" => "✓"}
-        %p.users-search
-          %input{"type" => "text", "name" =>"search", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
+      %form{action: "recipes", "accept-charset": "UTF-8", method: "get", class: "form_recipe"}
+        %input{ name: "utf8", type: "hidden", value: "✓"}
+        %p.recipes-search
+          %input{type: "text", name: "search", id: "search", class: "search-form", placeholder: "レシピ検索"}
           %button.btn.btn-success{name: "button", type: "submit"}  
             %i.fa.fa-search
             検索
     - @recipe.each do |recipe|
-      .card.mb-3
-        .row.no-gutters
-          .col-md-4
-            = image_tag "#{recipe.image}"
-          .col-md-8
-            .card-body
-              %h5.card-title
-                = recipe.name
-              %p.card-text
-                name
-              %p.card-text
-                = recipe.text
+      .card{:style => "width: 100%;"}
+        %img.card-img-top{alt: "...", :src => "#{recipe.image}"}
+        .card-body
+          %h5.card-title 
+            = recipe.name
+          %p.card-text 
+            = recipe.text
+        %ul.list-group.list-group-flush
+          %li.list-group-item 
+            =recipe.time
+          %li.list-group-item
+            =recipe.category
+          %li.list-group-item
+            =recipe.person
+        .card-body
+          %li.card-link
+            = recipe.material
+          %li.card-link
+            =recipe.seasoning
+
 
 
 
