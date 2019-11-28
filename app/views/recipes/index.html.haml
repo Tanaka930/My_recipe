@@ -8,7 +8,7 @@
         %input{name: "utf8", type: "hidden", value: "✓"}
         %p.users-search
           %input{type: "text", name: "search", id: "search", class: "search-form", placeholder: "ユーザー検索"}
-          %button.btn.btn-success{name: "button", type: "submit"}  
+          %button.btn.btn-success{type: "button", id: "submit"}  
             %i.fa.fa-search
             検索
     - @recipe.each do |recipe|

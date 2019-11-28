@@ -1,6 +1,11 @@
 $(function() {
-  $("#submit").on("click", function() {
-    let input = $("#keyword").val();
-    $("#result").text(input);
+  $(".form_user").on("keyword", function() {
+    var input = $(".form_user").val();
+    $.ajax({
+      type: 'GET',
+      url: '/users',
+      data: { keyword: input },
+      dataType: 'json'
+    })
   });
 });

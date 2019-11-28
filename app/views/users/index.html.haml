@@ -6,11 +6,11 @@
   .main__users-all-container
     %h1.users-heading
     .posts-index-top
-      %form{"action"=>"users", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
-        %input{"name" => "utf8", "type" => "hidden", "value" => "✓"}
+      =form_tag('/users', method: "get", class: "form_user") do
+        %input{type: "hidden", value: "✓"}
         %p.users-search
-          %input{"type" => "text", "name" =>"search", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
-          %button.btn.btn-success{name: "button", type: "submit"}  
+          %input{"type" => "text", "name" => "keyword", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
+          %button.btn.btn-success{type: "button", id: "submit"}  
             %i.fa.fa-search
             検索
     -@users.each do |user|
