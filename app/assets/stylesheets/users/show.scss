@@ -15,8 +15,9 @@
   padding: 30px;
 }
 .users-new-title {
+  background: linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   text-align: center;
-  background: #28a745;
   font-weight: bold;
   opacity: 0.8;
   color: white;
@@ -121,7 +122,9 @@ p {
 }
 
 .form .conform input[type="submit"] {
-  background-color: #28a745;
+  background: #50a3a2;
+  background: linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
   color: white;
   cursor: pointer;
   font-weight: 300;

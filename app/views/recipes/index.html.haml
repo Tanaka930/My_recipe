@@ -2,9 +2,29 @@
 
 .recipe__container
   %main.container{:role => "main"}
-    .card{:style => "width: 9rem;"}
-    %img.card-img-top{:alt => "...", :src => "..."}/
-    .card-body
-      %p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+    %h1.users-heading
+    .posts-index-top
+      %form{"action"=>"recipes", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
+        %input{"name" => "utf8", "type" => "hidden", "value" => "✓"}
+        %p.users-search
+          %input{"type" => "text", "name" =>"search", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
+          %button.btn.btn-success{name: "button", type: "submit"}  
+            %i.fa.fa-search
+            検索
+    - @recipe.each do |recipe|
+      .card.mb-3
+        .row.no-gutters
+          .col-md-4
+            = image_tag "#{recipe.image}"
+          .col-md-8
+            .card-body
+              %h5.card-title
+                = recipe.name
+              %p.card-text
+                name
+              %p.card-text
+                = recipe.text
+
+
 
 = render 'shared/footer'
