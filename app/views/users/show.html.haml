@@ -1,32 +1,30 @@
-= stylesheet_link_tag   'users/show', media: 'all', 'data-turbolinks-track': 'reload'
-
 = render 'shared/header'
-.users-edit
-  .container
-    .form.users-form
-      .form-body
-        .users-new-title
-          %p プロフィール編集
-        = form_for @users, url: edit_user_path, method: :post do |f| 
-          %input{name: "utf8", type: "hidden", value: "✓"}
-          %input{name: "_method", type: "hidden", value: "patch"}
-          %input{name: "authenticity_token", type: "hidden", value: "e7jH119v0juYz4ykHMMfhj6uAM4dhFORmHa1D6DEqP8jZe3nBeY+e+U97m4jJ8WLI1BbiObc8NQSJk7IeqYzFA=="}
-          %p ユーザー名
-          %input{name: "name"}
-          %p 画像
-          %input{name: "image", type: "file"}
-          %p メールアドレス
-          %input{name: "email"}
-          %p プロフィール
-          %input{name: "profile"}
-          .birthday-input
-            %p 生年月日
-            = raw sprintf(f.date_select(:birthday,use_month_numbers: true, start_year: 1960, end_year: (Time.now.year + 0), default: Date.new(1989, 1, 1), date_separator: '%s'), '年 ', '月 ') + '日'
-          .status-input
-            %p 性別
-            %input#man{name: "sex", type: "radio", value: "1"}
-            %label{for: "man"} 男性
-            %input#woman{name: "sex", type: "radio", value: "2"}
-            %label{for: "woman"} 女性
-          .conform
-            %input{type: "submit", value: "保存"}
+
+.main__user-content
+  .user-container
+    .user
+      .user-img
+      %h10.user-name
+        = @user.name
+      .show-link-btn
+      - if current_user.id == @user.id
+        %p.recipe-button
+          =link_to 'レシピ作成',' /recipes/new',class: 'show-link-btn-recipe'
+        %p
+          =link_to 'プロフィール変更','/users/edit',class: 'show-link-btn-recipe'
+        %p
+          =link_to 'ログアウト','/logout',class: 'show-link-btn-recipe'
+      - else
+    %ul.user-tabs
+      %li.active
+        =link_to 'Myレシピ',''
+      %li.unactive
+        =link_to 'お気に入り',''
+    .posts-index-photo
+    - @recipe.each do |recipe|
+      .post-photo
+        =link_to "/recipes/#{recipe.id}" do
+          = image_tag "#{@user.recipes.image}" 
+        .post-title-inimage
+          =recipe.name
+= render 'shared/footer'
