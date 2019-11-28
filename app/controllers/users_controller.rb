@@ -1,7 +1,17 @@
 class UsersController < ApplicationController
 
-  def edit
+  def index
+    @users = User.all
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 
+  def edit
+    @user = User.find_by(id: params[:id])
+    @users = User.new
   end
 
   def update
@@ -10,7 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @users = User.new
+    @recipe = Recipe.where(user_id: @user.id)
   end
   
 

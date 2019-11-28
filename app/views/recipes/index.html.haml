@@ -2,7 +2,7 @@
 
 .recipe__container
   %main.container{role: "main"}
-    - @recipe.each do |recipe|
+    - @recipes.each do |recipe|
       .card{style: "width: 100%;"}
         %img.card-img-top{alt: "...", src: "#{recipe.image}"}
         .card-body
@@ -22,6 +22,5 @@
             = recipe.material
           %li.card-list
             = recipe.seasoning
-
 
 = render 'shared/footer'
