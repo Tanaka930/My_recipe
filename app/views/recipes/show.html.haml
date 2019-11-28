@@ -4,52 +4,46 @@
       %span 2019/11/24
       %p
         = fa_icon "bullhorn"
-        \:お肉料理 
+        = @recipe.category
         = fa_icon "clock-o"
-        \:30分
+        =@recipe.time
     .post-show-user-name
       %img{:src => "https://my-meal.s3.amazonaws.com/uploads/user/image_name/182/thumb_185dbcd2-d02f-4879-990f-a7af9fa16ebb.jpeg"}/
-      %a{:href => "/users/182"} yyyuma
+      = @recipe.user.name 
     %div
       .posts-show-title
-        %h4 ハンバーグ
+        %h4 
+          =@recipe.name
     .post-image
-      %img{:src => "https://my-meal.s3.amazonaws.com/uploads/post/image_name/102/de35d3ca-a4e5-4fc7-95c8-5e858ec14fe5.jpg"}/
-    %a{"data-method" => "post", :href => "/likes/102/create", :rel => "nofollow"}
-      %span.fa.fa-heart.icon-size.like-btn
-    2
-     
-    %a{"data-method" => "post", :href => "/favorites/102/create", :rel => "nofollow"}
-      %span.fa.fa-star.icon-size.favorite-btn
-    0
-     
-    %span.fa.fa-comment.icon-size.comment-btn
-    0
-     
+      = image_tag "#{@recipe.image}", class: 'post-image'
     .comment-menus
       %a{:href => "/posts/102/comment"} コメントする
     .post-menus
       %a{:href => "/posts/102/edit"} 編集
       %a{"data-confirm" => "削除しますか？", "data-method" => "post", :href => "/posts/102/destroy", :rel => "nofollow"} 削除
     .posts-show-item
-      %p yyyuma：あったかハンバーグ
+      %p #{@recipe.user.name}：#{@recipe.text}
       .posts-show-subtitle
-        %p 材料・調味料（4人前）
-      %p 材料：合挽きミンチ、卵、パンくず
+        %p 材料・調味料(#{@recipe.person})
+      %p 材料：#{@recipe.material}
       %hr.border-top/
-      %p 調味料：胡椒
+      %p 調味料：#{@recipe.seasoning}
       .posts-show-subtitle
         %p 作り方
-      = succeed "\u{6df7}\u{305c}\u{308b}" do
+      = succeed "#{@recipe.content1}" do
         %span 1.
       %br/
       %hr/
-      = succeed "\u{3053}\u{306d}\u{308b}" do
+      = succeed "#{@recipe.content2}" do
         %span 2.
       %br/
       %hr/
-      = succeed "\u{713c}\u{304f}" do
+      = succeed "#{@recipe.content3}" do
         %span 3.
       %br/
+      %hr/
+      = succeed "#{@recipe.content4}" do
+        %span 4.
+      %br
       %hr/
       %p

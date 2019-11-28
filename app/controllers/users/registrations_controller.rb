@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   
   def detail
-      @recipes = Recipe.where(user_id: current_user.id)
+    @recipes = Recipe.where(params[:id])
     @user = User.find_by(id: params[:id])
   end
   
