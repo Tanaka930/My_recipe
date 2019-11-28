@@ -1,12 +1,12 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-
+  before_action :set
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order("created_at DESC")
   end
 
-  def  new
+  def new
     @recipe = Recipe.new
   end
 
@@ -60,5 +60,9 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+  
+  def set
+    Time.zone = 'Tokyo'
   end
 end
