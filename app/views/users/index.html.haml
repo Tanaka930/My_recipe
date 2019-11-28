@@ -9,7 +9,7 @@
       =form_tag('/users', method: "get", class: "form_user") do
         %input{type: "hidden", value: "✓"}
         %p.users-search
-          %input{"type" => "text", "name" => "keyword", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
+          %input{type: "text", name: "keyword", id: "search", class: "search-form", placeholder: "ユーザー検索"}
           %button.btn.btn-success{type: "button", id: "submit"}  
             %i.fa.fa-search
             検索
