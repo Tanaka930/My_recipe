@@ -59,6 +59,40 @@
   .post-menus {
     padding-right: 16px;
     float: right;
+    a {
+      color: black;
+      font-size: 13px;
+      background-color: #EEEEEE;
+      border-radius: 10px 10px;
+      padding: 2px 8px;
+      margin-left: 4px;
+      opacity: 0.8;
+    }
+  }
+  .posts-show-item {
+    padding: 0 15px 15px 15px;
+    background-color: white;
+    .posts-show-subtitle {
+      text-align: center;
+      background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+      font-weight: bold;
+      opacity: 0.8;
+      color: white;
+      border-radius: 10px 10px;
+    }
+    p {
+      font-size: 16px;
+      margin: 20px 0;
+      display: block;
+    }
+    .border-top {
+      border-top: 2px dotted grey!important;
+    }
+    span {
+      padding: 30px;
+      font-weight: bold;
+      color: grey;
+    }
   }
 }
 
