@@ -21,7 +21,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @recipe = Recipe.where(user_id: @user.id)
-    binding.pry
   end
   
 end
