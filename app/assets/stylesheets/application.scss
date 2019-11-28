@@ -17,7 +17,10 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 
 @import "bootstrap";
+@import "font-awesome";
 @import "flame";
 @import "recipes";
+@import "recipes/new";
+@import "recipes/show";
 @import "users/detail";
 @import "header";
