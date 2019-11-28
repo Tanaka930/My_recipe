@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-
+  before_action :set
   def index
     @recipes = Recipe.all
   end
@@ -54,5 +54,9 @@ class RecipesController < ApplicationController
       :content3,
       :content4
     ).merge(user_id: current_user.id)
+  end
+
+  def set
+    Time.zone = 'Tokyo'
   end
 end
