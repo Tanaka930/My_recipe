@@ -1,6 +1,6 @@
 $(function() {
-  $(".form_user").on("keyword", function() {
-    var input = $(".form_user").val();
+  $(".search-form").on("keyup", function() {
+    var input = $(".search-form").val();
     $.ajax({
       type: 'GET',
       url: '/users',
