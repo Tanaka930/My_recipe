@@ -25,9 +25,9 @@
         .toggle-square
           %p
             材料・調味料：
-            %span#ingredient-link.btn.btn-toggle
+            %span.btn.btn-toggle
               %i.fas.fa-angle-down.fa-large
-          %section#ingredient-sec
+          %section
             %p
               = f.select :person, [['1人前'], ['2人前'],['3人前'],['4人前'],['5人前'],['6人前']]
 
@@ -36,9 +36,9 @@
         .toggle-square
           %p
             作り方：
-            %span#content-link.btn.btn-toggle
+            %span.btn.btn-toggle
               %i.fas.fa-angle-down.fa-large
-          %section#content-sec
+          %section
             = f.text_area :content1, placeholder: "手順1"
             = f.text_area :content2, placeholder: "手順2"
             = f.text_area :content3, placeholder: "手順3"
@@ -46,9 +46,9 @@
         .toggle-square
           %p
             自分用メモ：
-            %span#memo-link.btn.btn-toggle
+            %span.btn.btn-toggle
               %i.fas.fa-angle-down.fa-large
-          %section#memo-sec
+          %section
             = f.text_area :my_text, placeholder: "他ユーザーには表示されません"
         %p
           料理時間：
@@ -60,6 +60,5 @@
           = f.select :category, [['お肉料理'], ['野菜料理'],['魚介料理'],['パスタ'],['ご飯'],['麺類'],['スープ'],['お弁当'],['スイーツ'],['その他']]
           %span#must-icon 必須
         = f.submit "投稿", class: "submit"
-        #overlay
 
 = render 'shared/footer'

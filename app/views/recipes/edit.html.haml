@@ -1,0 +1,64 @@
+= render 'shared/header'
+
+.container
+  = form_with model: @recipe, local: true do |f|
+    .form
+      .form-body
+        .title
+          %p レシピ作成
+        %p
+          料理名 
+          %span#must-icon 必須
+        = f.text_field :name, placeholder: "柔らかハンバーグ..など（16字以内）"
+        %p
+          画像 
+          %span#must-icon 必須
+        = f.file_field :image
+        %p
+          メモ 
+          %span#must-icon 必須
+        = f.text_field :text, placeholder: "コメントを書く"
+        %br/
+        %br/
+        %hr.hr-text{"data-content" => "AND"}/
+        %br/
+        .toggle-square
+          %p
+            材料・調味料：
+            %span.btn.btn-toggle
+              %i.fas.fa-angle-down.fa-large
+          %section
+            %p
+              = f.select :person, [['1人前'], ['2人前'],['3人前'],['4人前'],['5人前'],['6人前']]
+
+            = f.text_field :material, :placeholder => "材料：合挽き肉150g, 玉ねぎ1/2..など"
+            = f.text_field :seasoning, :placeholder => "調味料：牛乳30ml, 醤油大さじ1..など"
+        .toggle-square
+          %p
+            作り方：
+            %span.btn.btn-toggle
+              %i.fas.fa-angle-down.fa-large
+          %section
+            = f.text_area :content1, placeholder: "手順1"
+            = f.text_area :content2, placeholder: "手順2"
+            = f.text_area :content3, placeholder: "手順3"
+            = f.text_area :content4, placeholder: "手順4"
+        .toggle-square
+          %p
+            自分用メモ：
+            %span.btn.btn-toggle
+              %i.fas.fa-angle-down.fa-large
+          %section
+            = f.text_area :my_text, placeholder: "他ユーザーには表示されません"
+        %p
+          料理時間：
+          = f.select :time, [['5分以内'], ['10分'],['15分'],['20分'],['25分'],['30分'],['35分'],['40分'],['45分'],['50分'],['55分'],['1時間以上']]
+          %span#must-icon 必須
+        %br/
+        %p
+          カテゴリ：
+          = f.select :category, [['お肉料理'], ['野菜料理'],['魚介料理'],['パスタ'],['ご飯'],['麺類'],['スープ'],['お弁当'],['スイーツ'],['その他']]
+          %span#must-icon 必須
+        = f.submit "投稿", class: "submit"
+
+= render 'shared/footer'

@@ -17,10 +17,10 @@
     .post-image
       = image_tag "#{@recipe.image}", class: 'post-image'
     .comment-menus
-      %a{:href => "/posts/102/comment"} コメントする
+      = link_to "コメントする", edit_recipe_path 
     .post-menus
-      %a{:href => "/posts/102/edit"} 編集
-      %a{"data-confirm" => "削除しますか？", "data-method" => "post", :href => "/posts/102/destroy", :rel => "nofollow"} 削除
+      = link_to "編集", edit_recipe_path 
+      = link_to "削除", recipe_path(@recipe), method: :delete
     .posts-show-item
       %p #{@recipe.user.name}：#{@recipe.text}
       .posts-show-subtitle
