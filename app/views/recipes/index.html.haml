@@ -1,13 +1,13 @@
 = render 'shared/header'
 
 .recipe__container
-  %main.container{:role => "main"}
-    %h1.users-heading
+  %main.container{role: "main"}
+    %h1.recipes-heading
     .posts-index-top
-      %form{"action"=>"recipes", "accept-charset" => "UTF-8", "method" => "get", class:"form_user"}
-        %input{"name" => "utf8", "type" => "hidden", "value" => "✓"}
-        %p.users-search
-          %input{"type" => "text", "name" =>"search", "id" => "search", "class" => "search-form", "placeholder" => "ユーザー検索"}
+      %form{action: "recipes", "accept-charset": "UTF-8", method: "get", class: "form_recipe"}
+        %input{ name: "utf8", type: "hidden", value: "✓"}
+        %p.recipes-search
+          %input{type: "text", name: "search", id: "search", class: "search-form", placeholder: "レシピ検索"}
           %button.btn.btn-success{name: "button", type: "submit"}  
             %i.fa.fa-search
             検索
