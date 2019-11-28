@@ -1,27 +1,27 @@
 = render 'shared/header'
 
 .recipe__container
-  %main.container{role: "main"}
-    - @recipe.each do |recipe|
-      .card{:style => "width: 100%;"}
-        %img.card-img-top{alt: "...", :src => "#{recipe.image}"}
-        .card-body
-          %h5.card-title 
-            = recipe.name
-          %p.card-text 
-            = recipe.text
-        %ul.list-group.list-group-flush
-          %li.list-group-item 
-            =recipe.time
-          %li.list-group-item
-            =recipe.category
-          %li.list-group-item
-            =recipe.person
-        .card-body
-          %li.card-link
-            = recipe.material
-          %li.card-link
-            =recipe.seasoning
+  -# %main.container{role: "main"}
+  -#   - @recipe.each do |recipe|
+  -#     .card{:style => "width: 100%;"}
+  -#       %img.card-img-top{alt: "...", :src => "#{recipe.image}"}
+  -#       .card-body
+  -#         %h5.card-title 
+  -#           = recipe.name
+  -#         %p.card-text 
+  -#           = recipe.text
+  -#       %ul.list-group.list-group-flush
+  -#         %li.list-group-item 
+  -#           =recipe.time
+  -#         %li.list-group-item
+  -#           =recipe.category
+  -#         %li.list-group-item
+  -#           =recipe.person
+  -#       .card-body
+  -#         %li.card-link
+  -#           = recipe.material
+  -#         %li.card-link
+  -#           =recipe.seasoning
 
 
 
