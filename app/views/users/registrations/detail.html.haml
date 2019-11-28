@@ -7,19 +7,22 @@
       %h10.user-name
         = @user.name
       .show-link-btn
+      - if current_user.id == @user.id
         %p.recipe-button
           =link_to 'レシピ作成',' /recipes/new',class: 'show-link-btn-recipe'
         %p
           =link_to 'プロフィール変更','/users/show',class: 'show-link-btn-recipe'
         %p
           =link_to 'ログアウト','/logout',class: 'show-link-btn-recipe'
+      - else
+
     %ul.user-tabs
       %li.active
         =link_to 'Myレシピ',''
       %li.unactive
         =link_to 'お気に入り',''
     .posts-index-photo
-    -@recipe.each do |recipe|
+    - @recipes.each do |recipe|
       .post-photo
         =link_to "/recipes/#{recipe.id}" do
           = image_tag "#{recipe.image}" 
