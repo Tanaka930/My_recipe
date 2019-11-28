@@ -27,5 +27,6 @@
         = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
       .actions
         = f.submit "変更する", class: "button"
-    = link_to "back", :back
+      .image_recipe
+      = link_to image_tag("/images/my_recipe.png"),root_path
     
