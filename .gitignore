@@ -27,5 +27,5 @@
 /config/master.key
 vendor/*
 
- # Ignore uploaded files in development
+#  Ignore uploaded files in development
  /public/uploads/
