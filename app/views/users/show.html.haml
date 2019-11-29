@@ -3,7 +3,11 @@
 .main__user-content
   .user-container
     .user
-      =image_tag "/images/default_user.png", class: "user-img"
+      - if @user.icon == nil
+        =image_tag "/images/default_user.png", class: "user-img"
+      -else
+        .user-img
+          = @user.icon
       %h10.user-name
         = @user.name
       .show-link-btn
