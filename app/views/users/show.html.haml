@@ -11,7 +11,7 @@
         %p.recipe-button
           =link_to 'レシピ作成',' /recipes/new',class: 'show-link-btn-recipe'
         %p
-          =link_to 'プロフィール変更','/users/edit',class: 'show-link-btn-recipe'
+          =link_to 'プロフィール変更',edit_user_path,class: 'show-link-btn-recipe'
         %p
           =link_to 'ログアウト','/logout',class: 'show-link-btn-recipe'
       - else
