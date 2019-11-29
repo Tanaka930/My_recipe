@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update]
 
   def index
-    @users = User.all
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
       format.html
       format.json
@@ -28,18 +27,8 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @recipe = Recipe.where(user_id: @user.id)
   end
-  
-
-  def index
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
-    respond_to do |format|
-      format.html
-      format.json
-    end
-  end
 
   private
-
 
   def user_params
     params.require(:user).permit(
