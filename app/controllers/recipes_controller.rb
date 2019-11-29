@@ -35,7 +35,12 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe.destroy
+    if @recipe.user_id == current_user.id 
+      @recipe.destroy
+      redirect_to root_path
+    else
+      redirect_to recipe_path(@recipe)
+    end
   end
 
   private
