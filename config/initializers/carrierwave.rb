@@ -12,6 +12,7 @@ if Rails.env.production?
       region: 'ap-northeast-1'  # S3バケット作成時に指定したリージョン。左記は東京を指す
     }
     config.fog_directory  = 'recipesspic' # 作成したS3バケット名
+    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   end
   # 日本語ファイル名の設定
   CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/ 
