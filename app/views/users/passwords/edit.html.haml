@@ -2,7 +2,7 @@
 
 .wrapper
   .container
-    %h2 Change your password
+    %h2 パスワードを変更する
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
       = f.hidden_field :reset_password_token
@@ -21,4 +21,4 @@
       .actions
         = f.submit "Change my password",class: "button"
     = render "users/shared/links"
-    = render "users/shared/bubbles"
+
