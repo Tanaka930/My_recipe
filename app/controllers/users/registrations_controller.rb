@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  
+  def edit
+    @user = User.find_by(id: params[:id])
+    @users = User.new
+  end
   # protected
   
   # ここのコメントアウトを外してリダイレクト先を指定

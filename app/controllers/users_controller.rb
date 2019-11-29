@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only:[:edit, :update]
+
   def index
     @users = User.all
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
@@ -10,12 +12,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
-    @users = User.new
+    # @user = User.find_by(id: params[:id])
+    # @users = User.new
   end
 
   def update
-
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def show
@@ -31,4 +37,20 @@ class UsersController < ApplicationController
       format.json
     end
   end
+
+  private
+
+
+  def user_params
+    params.require(:user).permit(
+      :name, 
+      :icon, 
+      :email
+    )
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end
