@@ -3,7 +3,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   before_action :set
   def index
-    @recipes = Recipe.all.order("created_at DESC")
+    @recipes = Recipe.where('name LIKE(?) OR text LIKE(?) OR material LIKE(?) OR seasoning LIKE(?) OR time LIKE(?) OR category LIKE(?) OR person LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%").order("created_at DESC")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
