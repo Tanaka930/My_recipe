@@ -2,6 +2,16 @@
 
 .recipe__container
   %main.container{role: "main"}
+
+    %h1.recipes-heading
+    .posts-index-top
+      =form_for('/users', method: "get", class: "form_user") do
+        %input{type: "hidden", value: "✓"}
+        %p.recipes-search
+          %input{type: "text", name: "keyword", id: "search", class: "search-form", placeholder: "ユーザー検索"}
+          %button.btn.btn-success{type: "submit", id: "submit"}  
+            %i.fa.fa-search
+            検索
     - @recipes.each do |recipe|
       .card{style: "width: 100%;"}
       =link_to "recipes/#{recipe.id}" do
