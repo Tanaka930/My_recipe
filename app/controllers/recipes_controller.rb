@@ -43,6 +43,7 @@ class RecipesController < ApplicationController
       @recipe.destroy
       redirect_to root_path
     else
+      binding.pry
       redirect_to recipe_path(@recipe)
     end
   end
