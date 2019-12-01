@@ -19,9 +19,10 @@
           =@recipe.name
     .post-image
       = image_tag "#{@recipe.image}", class: 'post-image'
-    .post-menus
-      = link_to "編集", edit_recipe_path 
-      = link_to "削除", recipe_path, method: :delete
+    - if user_signed_in? && current_user.id == @recipe.user_id
+      .post-menus
+        = link_to "編集", edit_recipe_path 
+        = link_to "削除", recipe_path, method: :delete
     .posts-show-item
       %p #{@recipe.user.name}：#{@recipe.text}
       .posts-show-subtitle
