@@ -29,4 +29,4 @@ vendor/*
 
 #  Ignore uploaded files in development
 /public/uploads/
-.env
+/.env

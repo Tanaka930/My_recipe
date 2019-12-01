@@ -23,7 +23,7 @@
       = link_to "コメントする", recipes_path 
     .post-menus
       = link_to "編集", edit_recipe_path 
-      = link_to "削除", recipe_path(@recipe), method: :delete
+      = link_to "削除", recipe_path, method: :delete
     .posts-show-item
       %p #{@recipe.user.name}：#{@recipe.text}
       .posts-show-subtitle
