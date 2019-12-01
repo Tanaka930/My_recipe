@@ -62,7 +62,8 @@
             = comment.created_at.strftime("%Y/%m/%d %H:%M")
           = link_to "#{comment.user.name}:"
           = comment.text
-          -
-          .post-menus
-            = link_to "削除", recipe_comment_path(recipe_id: @recipe.id, id: comment.id), method: :delete
-          %hr/
+          - if user_signed_in?
+            - if comment.user_id == current_user.id || @recipe.user_id == current_user.id
+              .post-menus
+                = link_to "削除", recipe_comment_path(recipe_id: @recipe.id, id: comment.id), method: :delete
+              %hr/
