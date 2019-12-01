@@ -19,8 +19,6 @@
           =@recipe.name
     .post-image
       = image_tag "#{@recipe.image}", class: 'post-image'
-    .comment-menus
-      = link_to "コメントする", recipes_path 
     .post-menus
       = link_to "編集", edit_recipe_path 
       = link_to "削除", recipe_path, method: :delete
