@@ -13,11 +13,11 @@
       .show-link-btn
       - if current_user.id == @user.id
         %p.recipe-button
-          =link_to 'レシピ作成',' /recipes/new',class: 'show-link-btn-recipe'
+          =link_to 'レシピ作成', '/recipes/new', class: 'show-link-btn-recipe'
         %p
-          =link_to 'プロフィール変更',edit_user_path,class: 'show-link-btn-recipe'
+          =link_to 'プロフィール変更', edit_user_path, class: 'show-link-btn-recipe'
         %p
-          =link_to 'ログアウト','/logout',class: 'show-link-btn-recipe'
+          =link_to 'ログアウト', '/logout', class: 'show-link-btn-recipe'
       - else
     %ul.user-tabs
       %li.active
