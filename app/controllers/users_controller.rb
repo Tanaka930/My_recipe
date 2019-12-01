@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only:[:show, :edit, :update]
+  before_action :set_user, only:[ :show, :edit, :update]
 
   def index
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
       format.html
       format.json
+    @user = User.all
     end
   end
 

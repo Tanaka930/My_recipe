@@ -13,20 +13,7 @@
           %input{name: "authenticity_token", type: "hidden", value: "e7jH119v0juYz4ykHMMfhj6uAM4dhFORmHa1D6DEqP8jZe3nBeY+e+U97m4jJ8WLI1BbiObc8NQSJk7IeqYzFA=="}
           %p ユーザー名
           = f.text_field :name
-          %p 画像
-          = f.file_field :icon
           %p メールアドレス
           = f.text_field :email
-          -# %p プロフィール
-          -# %input{name: "profile"}
-          -# .birthday-input
-          -#   %p 生年月日
-          -#   = raw sprintf(f.date_select(:birthday,use_month_numbers: true, start_year: 1960, end_year: (Time.now.year + 0), default: Date.new(1989, 1, 1), date_separator: '%s'), '年 ', '月 ') + '日'
-          -# .status-input
-          -#   %p 性別
-          -#   %input#man{name: "sex", type: "radio", value: "1"}
-          -#   %label{for: "man"} 男性
-          -#   %input#woman{name: "sex", type: "radio", value: "2"}
-          -#   %label{for: "woman"} 女性
           .conform
             %input{type: "submit", value: "保存"}

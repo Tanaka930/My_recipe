@@ -3,7 +3,11 @@
 .main__user-content
   .user-container
     .user
-      =image_tag "/images/default_user.png", class: "user-img"
+      - if @user.icon == nil
+        =image_tag "/images/default_user.png", class: "user-img"
+      -else
+        .user-img
+          = @user.icon
       %h10.user-name
         = @user.name
       .show-link-btn
@@ -18,8 +22,6 @@
     %ul.user-tabs
       %li.active
         =link_to 'Myレシピ',''
-      %li.unactive
-        =link_to 'お気に入り',''
     .posts-index-photo
     - @recipe.each do |recipe|
       .post-photo
