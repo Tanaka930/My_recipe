@@ -50,3 +50,17 @@
       %br
       %hr/
       %p
+      %h4 Comments
+      = form_with model: [@recipe, @comment] do |f|
+        = f.text_field :text
+        = f.submit "コメントする"  
+      - @recipe.comments.each do |comment|
+        .posts-show-comment
+          .post-time-comment
+            =image_tag "/images/default_user.png", class: "user-img"
+            = comment.created_at.strftime("%Y/%m/%d %H:%M")
+          = link_to "#{comment.user.name}:"
+          = comment.text
+          .post-menus
+            = link_to "削除", recipe_comment_path(recipe_id: @recipe.id, id: comment.id), method: :delete
+          %hr/

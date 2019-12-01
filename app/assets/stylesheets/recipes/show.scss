@@ -94,6 +94,23 @@
       color: grey;
     }
   }
+  .posts-show-comment {
+      font-size: 14px;
+      margin: 0 0;
+    .post-time-comment {
+      color: #8899a6;
+      font-size: 13px;
+      img {
+        width: 22px;
+        height: 22px;
+        border-radius: 60%;
+        box-shadow: 0 2px 6px #c1ced7;
+        vertical-align: middle;
+        object-fit: cover;
+        margin: 0;
+      }
+    }
+  }
 }
 
 h4 {
