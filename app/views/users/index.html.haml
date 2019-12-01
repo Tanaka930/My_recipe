@@ -17,10 +17,6 @@
       .users-all-items
         .user-left
           = link_to "name", "/user/#{user.id}", class:"users-items-box"
-          - if user.icon == nil
-            = image_tag "/images/default_user.png", alt: '', height: '', width: '', class: 'user-left-img'
-          -else
-            .user-left-img
-              = user.icon
+          = image_tag "/images/default_user.png", class: 'user-left-img'
         .user-right
           = user.name
